@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #111, #444);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      border-left: 5px solid #a020f0; /* purple accent */
+      padding-left: 10px;
+      color: #444;
+    }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  border: 4px solid #a020f0;
+  border-radius: 30px;
+  background-color: #111;
+  background-image: url("WhatsApp Image 2026-07-23 at 5.53.51 AM.jpeg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 15px #a020f0;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  color: #111;
+}
+
+.content h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #a020f0;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 26px;
+  text-align: justify;
+  color: #333;
+  background: #f4f4f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(160,32,240,0.3);
+}
+
+/* 📱 Mobile adjustments */
+/* 📱 Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .box {
+    height: 250px;
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+/* 📲 Tablet (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .box {
+    height: 300px;
+    max-width: 45%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+/* 💻 Laptop (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    gap: 60px;
+  }
+
+  .box {
+    height: 350px;
+    max-width: 40%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* 🖥️ Large PC screens (1441px and above) */
+@media (min-width: 1441px) {
+  .container {
+    gap: 80px;
+  }
+
+  .box {
+    height: 400px;
+    max-width: 35%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="samples.html">Samples</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="box"></div>
+      <div class="content">
+        <h1>NIVETHA M</h1> 
+        <p>
+  <b>I am a passionate and creative video editor with a strong interest in <span style="color:#a020f0;">creating engaging Reels, Shorts, Advertisements, and AI-scripted videos</span>. I focus on delivering high-quality edits with creativity, attention to detail, and fast turnaround. As a fresher, I am eager to learn, grow, and help clients bring their ideas to life through impactful visual storytelling.</b>
+</p>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+
+

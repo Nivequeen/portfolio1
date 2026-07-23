@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample Works - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #111, #444);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .samples-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .sample-card {
+      width: 280px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .sample-card:hover {
+      transform: scale(1.05);
+    }
+    .sample-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #a020f0;
+    }
+    .sample-card h3 {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #a020f0; /* purple accent */
+      letter-spacing: 0.5px;
+    }
+    /* Popup modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      text-align: left;
+      box-shadow: 0 0 15px #a020f0;
+    }
+    .close {
+      float: right;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #a020f0;
+    }
+    .watch-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background: #a020f0;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .watch-btn:hover {
+      background: #7a0fc0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    p{
+      color: #a020f0;
+    }
+    /* 📱 Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .box {
+    height: 250px;
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+/* 📲 Tablet (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .box {
+    height: 300px;
+    max-width: 45%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+/* 💻 Laptop (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    gap: 60px;
+  }
+
+  .box {
+    height: 350px;
+    max-width: 40%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* 🖥️ Large PC screens (1441px and above) */
+@media (min-width: 1441px) {
+  .container {
+    gap: 80px;
+  }
+
+  .box {
+    height: 400px;
+    max-width: 35%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sample Works</h1>
+  <p>Reels • Shorts • Ad Videos</p>
+     <nav>
+      <a href="index.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="samples.html">Samples</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section>
+  <div class="samples-container">
+    <div class="sample-card" onclick="openModal('fashion')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBXX0znkchiZRWKxFl9l4YW31lCFDZLrLeaHK7NtultA&s=10" alt="Fashion Reel">
+      <h3>Client Project</h3>
+    </div>
+    <div class="sample-card" onclick="openModal('product')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF1eWAAm5BH0YrfITlOjkal03CfKDjKJwP4RlFHb_JxciW_2-ytRByNVs&s=10" alt="Product Ad">
+      <h3>Instagram Reels</h3>
+    </div>
+    <div class="sample-card" onclick="openModal('influencer')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR05ZrKQrnrJP9a-gTnCuVZOA-op0x_IUHQ6zzTUJOSAA&s" alt="Influencer Short">
+      <h3>AI Scripted Videos</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="fashion" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('fashion')">&times;</span>
+    <h2>Client Project</h2>
+    <p>A stylish reel crafted for a fashion brand — featuring fast cuts, smooth transitions, and music sync to highlight their latest collection.</p>
+    <a href="https://www.instagram.com/reel/Da5WIRxtdRt/?igsh=MWg3OWkzaG1jZnJhNw==" target="_blank" class="watch-btn">Watch Demo</a>
+  </div>
+</div>
+
+<div id="product" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('product')">&times;</span>
+    <h2>Instagram Reels</h2>
+    <p>Engaging product showcase reel with clean storytelling, bold captions, and a clear call-to-action — designed to boost social media campaigns.</p>
+    <a href="https://www.instagram.com/reel/DavAtsgz45c/?utm_source=ig_web_button_share_sheet" target="_blank" class="watch-btn">Watch Demo</a>
+  </div>
+</div>
+
+<div id="influencer" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('influencer')">&times;</span>
+    <h2>AI Scripted Videos</h2>
+    <p>AI-powered short video created for influencer marketing — complete with trendy transitions, captions, and vibrant color grading optimized for mobile screens.</p>
+    <a href="https://www.instagram.com/reel/Da5XGj6T6Ay/?igsh=ZTFvb241YjRmNzBz" target="_blank" class="watch-btn">Watch Demo</a>
+  </div>
+</div>
+
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SKILLS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+ header {
+      background: linear-gradient(135deg, #111, #444);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    } 
+    header h1 {
+      margin: 0;
+    }
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.skill-card {
+  flex: 1 1 220px; /* flexible width */
+  max-width: 250px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #a020f0;
+}
+
+.skill-card h3 {
+  margin-top: 12px;
+  font-size: 1.2em;
+  color: #a020f0;
+  letter-spacing: 0.5px;
+}
+
+/* Popup modal */
+/* Popup modal */
+.modal {
+  display: none;   /* hidden by default */
+  position: static; /* no fixed overlay */
+  background: none; /* remove dark overlay */
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px auto;
+}
+
+.modal-content {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: left;
+  box-shadow: 0 0 20px #a020f0;
+}
+
+
+
+.close {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #a020f0;
+}
+
+/* 📱 Mobile adjustments */
+/* 📱 Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .box {
+    height: 250px;
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+/* 📲 Tablet (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .box {
+    height: 300px;
+    max-width: 45%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+/* 💻 Laptop (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    gap: 60px;
+  }
+
+  .box {
+    height: 350px;
+    max-width: 40%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* 🖥️ Large PC screens (1441px and above) */
+@media (min-width: 1441px) {
+  .container {
+    gap: 80px;
+  }
+
+  .box {
+    height: 400px;
+    max-width: 35%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+nav {
+  margin-top: 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Skills</h1>
+  <p>Specialized tools for Reels, Shorts & Ad Videos</p>
+   <nav>
+      <a href="index.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="samples.html">Samples</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<section>
+  <div class="skills-container">
+    <div class="skill-card" onclick="openModal('videoedit')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgUJqpLs53MPnqlwuE8da15B0f9xWJxd19mbn3hypSH2i9A8E5zXPQN6x&s=10" alt="Video Editing">
+      <h3>Video Editing</h3>
+    </div>
+    <div class="skill-card" onclick="openModal('canva')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy-audKGIx4wGH7DtN21X4LRXsUpGIylAELkl-I9vSgg&s=10" alt="Canva Design">
+      <h3>Canva Design</h3>
+    </div>
+    <div class="skill-card" onclick="openModal('aiscript')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE8dtsNJSuojblU-GZBL9CEDTmF5X6r24W_pmwNj66vUyohli_P9xtfBg&s=10" alt="AI Scripted Video Creation">
+      <h3>AI Scripted Video Creation</h3>
+    </div>
+    <div class="skill-card" onclick="openModal('fastdelivery')">
+      <img src="https://elements-resized.envatousercontent.com/elements-video-cover-images/76d70f64-9dec-44c6-96eb-74ab9962d9be/video_preview/video_preview_0000.jpg?w=500&cf_fit=cover&q=85&format=auto&s=f123cf5cdc6d5d3126a161953d0f325614d3bf83a8036199f7aec916eb38ebfb" alt="Fast Delivery">
+      <h3>Fast Delivery</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="videoedit" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('videoedit')">&times;</span>
+    <h2>Video Editing</h2>
+    <p>Professional editing for Reels, Shorts, and Ads with smooth transitions, effects, and storytelling that grabs attention.</p>
+  </div>
+</div>
+
+<div id="canva" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('canva')">&times;</span>
+    <h2>Canva Design</h2>
+    <p>Creative Canva designs for thumbnails, posters, and social media visuals that make your brand stand out.</p>
+  </div>
+</div>
+
+<div id="aiscript" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('aiscript')">&times;</span>
+    <h2>AI Scripted Video Creation</h2>
+    <p>AI-powered scripts turned into engaging videos — perfect for ads, explainer content, and social media campaigns.</p>
+  </div>
+</div>
+
+<div id="fastdelivery" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('fastdelivery')">&times;</span>
+    <h2>Fast Delivery</h2>
+    <p>Quick turnaround without compromising quality. Get your videos ready on time, every time.</p>
+  </div>
+</div>
+
+<script> 
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+

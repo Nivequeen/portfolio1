@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services - Nivetha Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #111, #444);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-around;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  align-items: flex-start;
+
+}
+
+.service-card {
+    flex: 0 0 300px;
+width: 300px;
+  background-color: #111;
+  border-radius: 20px;
+  padding:30px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #a020f0;
+}
+
+.service-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1);
+}
+
+.service-card h3 {
+  color: #a020f0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+.service-card p {
+  font-size: 0.9em;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #333;;
+  margin-top: 40px;
+}
+
+h2 span {
+  color: #333;
+}
+
+/* Popup modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 0 15px #a020f0;
+}
+
+.close {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #a020f0;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px; /* consistent gap between cards */
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-card {
+  background-color: #111;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;   /* card fills its grid cell */
+  box-sizing: border-box; /* ensures padding doesn’t break layout */
+}
+
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #a020f0;
+}
+
+.service-card h3 {
+  color: #a020f0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.service-card p {
+  font-size: 0.95em;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Responsive tweaks */
+/* 📱 Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .box {
+    height: 250px;
+    max-width: 90%;
+  }
+
+  .content h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+/* 📲 Tablet (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .box {
+    height: 300px;
+    max-width: 45%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 26px;
+  }
+
+  .content p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+/* 💻 Laptop (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    gap: 60px;
+  }
+
+  .box {
+    height: 350px;
+    max-width: 40%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 28px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* 🖥️ Large PC screens (1441px and above) */
+@media (min-width: 1441px) {
+  .container {
+    gap: 80px;
+  }
+
+  .box {
+    height: 400px;
+    max-width: 35%;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 32px;
+  }
+
+  .content p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+p{
+  color: #a020f0;
+}
+</style>
+<body>
+
+<header>
+  <h1>SERVICES</h1>
+  <p>Works provided </p>
+     <nav>
+      <a href="index.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="services.html">Services</a>
+      <a href="samples.html">Samples</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="services">
+  <h2>SERV<span>ICES</span></h2>
+  <div class="service-grid">
+    <div class="service-card">
+
+      <h3>INSTAGRAM REELS</h3>
+      <p>Engaging reels that boost your reach.</p>
+    </div>
+    <div class="service-card">
+  
+      <h3>YOUTUBE SHORTS</h3>
+      <p>Short-form videos that capture attention.</p>
+    </div>
+    <div class="service-card">
+
+      <h3>PROMOTION VIDEOS</h3>
+      <p>Creative videos to showcase your brand.</p>
+    </div>
+    <div class="service-card">
+
+      <h3>ADVERTISEMENT</h3>
+      <p>Highlight your club, brand, or product.</p>
+    </div>
+    <div class="service-card">
+
+      <h3>AI SCRIPTED VIDEO</h3>
+      <p>AI-powered videos with creative storytelling.</p>
+    </div>
+    <div class="service-card">
+    
+      <h3>SUBTITLE EDITING</h3>
+      <p>Clean, accurate, and stylish subtitles.</p>
+    </div>
+    <div class="service-card">
+
+      <h3>PORTFOLIO WEBSITES</h3>
+      <p>Showcasing portfolio websites designed using Canva.</p>
+    </div>
+    <div class="service-card">
+    
+      <h3>BUSINESS WEBSITES</h3>
+      <p>Professional business websites created using Canva.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
+
