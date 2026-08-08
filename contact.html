@@ -1,288 +1,1616 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Nivetha Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<style>
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  header {
-    background: linear-gradient(135deg, #111, #444);
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    
-  }
-  header h1 {
-    margin: 0;
-  }
-  nav {
-    margin-top: 10px;
-  }
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
 
-  h2 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin-top: 40px;
-  }
-  h2 span {
-    color: #a020f0;
-  }
+    <meta charset="UTF-8">
 
-  .contact-wrapper {
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Nivetha M</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+
+            background: #070509;
+
+            color: #fff;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 520px;
+            height: 520px;
+
+            top: -220px;
+            right: -170px;
+
+            background: #a020f0;
+
+            opacity: 0.13;
+
+            filter: blur(140px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            bottom: -220px;
+            left: -170px;
+
+            background: #7b2cff;
+
+            opacity: 0.08;
+
+            filter: blur(130px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+
+            width: 100%;
+
+            height: 80px;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: rgba(7,5,9,0.78);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+
+        .logo {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 23px;
+
+            font-weight: 800;
+        }
+
+
+        .logo span {
+            color: #a020f0;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            color: #999;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links .active {
+
+            color: #fff;
+        }
+
+
+        .nav-links .active {
+
+            position: relative;
+        }
+
+
+        .nav-links .active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -10px;
+
+            transform: translateX(-50%);
+
+            width: 5px;
+            height: 5px;
+
+            background: #a020f0;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 10px #a020f0;
+        }
+
+
+        .nav-contact {
+
+            text-decoration: none;
+
+            color: #fff;
+
+            padding: 10px 18px;
+
+            border: 1px solid #a020f0;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-contact:hover {
+
+            background: #a020f0;
+
+            box-shadow:
+                0 0 25px rgba(160,32,240,0.55);
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================= */
+
+        .contact {
+
+            max-width: 1150px;
+
+            min-height: 100vh;
+
+            margin: auto;
+
+            padding:
+                135px 7% 70px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 50px;
+        }
+
+
+        .tag {
+
+            color: #c88aff;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+
+        .header h1 {
+
+            font-family: "Poppins", sans-serif;
+
+            font-size:
+                clamp(42px, 5vw, 60px);
+
+            line-height: 1.1;
+
+            letter-spacing: -2px;
+
+            margin: 13px 0;
+        }
+
+
+        .header h1 span {
+
+            color: #a020f0;
+
+            text-shadow:
+                0 0 22px rgba(160,32,240,0.45);
+        }
+
+
+        .header p {
+
+            color: #929292;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT WRAPPER
+        ========================= */
+
+        .contact-wrapper {
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 25px;
+        }
+
+
+        /* =========================
+           LEFT CARD
+        ========================= */
+
+        .contact-info {
+
+            padding: 32px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.065),
+                    rgba(255,255,255,0.02)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .contact-info::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -90px;
+
+            background: #a020f0;
+
+            opacity: 0.15;
+
+            filter: blur(45px);
+
+            border-radius: 50%;
+        }
+
+
+        .contact-info h2 {
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .contact-info > p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           CONTACT ITEMS
+        ========================= */
+
+        .contact-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 15px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+
+        .contact-icon {
+
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(160,32,240,0.1);
+
+            border:
+                1px solid rgba(160,32,240,0.25);
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-item:hover .contact-icon {
+
+            background:
+                rgba(160,32,240,0.2);
+
+            box-shadow:
+                0 0 18px rgba(160,32,240,0.25);
+        }
+
+
+        .contact-item small {
+
+            display: block;
+
+            color: #666;
+
+            font-size: 10px;
+
+            margin-bottom: 4px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        .contact-item a {
+
+            color: #ddd;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            word-break: break-word;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-item a:hover {
+            color: #c88aff;
+        }
+
+
+        /* =========================
+           SOCIALS
+        ========================= */
+
+        .socials {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+
+        .socials a {
+
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .socials a:hover {
+
+            color: #fff;
+
+            border-color: #a020f0;
+
+            background:
+                rgba(160,32,240,0.13);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 18px rgba(160,32,240,0.2);
+        }
+
+
+        /* =========================
+           FORM CARD
+        ========================= */
+
+        .contact-form {
+
+            padding: 32px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.065),
+                    rgba(255,255,255,0.02)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+        }
+
+
+        .contact-form h2 {
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 24px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FLOATING LABEL
+        ========================= */
+
+        .input-group {
+
+            position: relative;
+
+            margin-bottom: 22px;
+        }
+
+
+        .input-group input,
+        .input-group textarea {
+
+            width: 100%;
+
+            padding:
+                16px 15px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid rgba(255,255,255,0.11);
+
+            border-radius: 11px;
+
+            outline: none;
+
+            color: #fff;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+
+        .input-group textarea {
+
+            min-height: 135px;
+
+            resize: vertical;
+        }
+
+
+        .input-group label {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 16px;
+
+            padding: 0 5px;
+
+            color: #777;
+
+            font-size: 12px;
+
+            pointer-events: none;
+
+            transition:
+                0.25s ease;
+
+            background: transparent;
+        }
+
+
+        /* Floating label */
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+
+            border-color: #a020f0;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(160,32,240,0.08);
+        }
+
+
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label,
+
+        .input-group textarea:focus + label,
+        .input-group textarea:not(:placeholder-shown) + label {
+
+            top: -8px;
+
+            color: #c88aff;
+
+            font-size: 10px;
+
+            background: #0e0b10;
+        }
+
+
+        /* =========================
+           SEND BUTTON
+        ========================= */
+
+        .send-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background: #a020f0;
+
+            color: #fff;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.35s;
+
+            box-shadow:
+                0 0 20px rgba(160,32,240,0.25);
+        }
+
+
+        .send-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            background: #b43cff;
+
+            box-shadow:
+                0 0 35px rgba(160,32,240,0.6);
+        }
+
+
+        /* =========================
+           QUICK CONTACT
+        ========================= */
+
+        .quick-contact {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+
+        .quick-contact a {
+
+            padding: 11px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            color: #bbb;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 9px;
+
+            font-size: 11px;
+
+            transition: 0.3s;
+        }
+
+
+        .quick-contact a:hover {
+
+            color: #fff;
+
+            border-color: #a020f0;
+
+            background:
+                rgba(160,32,240,0.08);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .contact {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                order: 2;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-contact {
+                padding: 9px 15px;
+            }
+
+            .contact {
+                padding:
+                    110px 6% 55px;
+            }
+
+            .header {
+                margin-bottom: 35px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+            }
+
+            .header p {
+                font-size: 13px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 24px;
+            }
+
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 21px;
+            }
+
+            .quick-contact {
+                grid-template-columns: 1fr;
+            }
+        }
+/* =========================
+   SMOOTH PAGE TRANSITION
+========================= */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Page leaving */
+
+body.page-leaving {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+/* =========================
+   NEXT PAGE INDICATOR
+========================= */
+
+.next-page-indicator {
+    position: fixed;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform: translateX(-50%);
+
     display: flex;
-    gap: 40px;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-  }
-
-  .profile-pic img {
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #a020f0;
-  }
-
-  .contact-container {
-    flex: 1;
-    min-width: 300px;
-    background: #111;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #a020f0;
-    color: #fff;
-  }
-  label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #a020f0;
-  }
-  input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 8px;
-    background: #333;
-    color: #fff;
-  }
-  input::placeholder, textarea::placeholder {
-    color: #aaa;
-  }
-  button {
-    background: #a020f0;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  button:hover {
-    background: #7a0fc0;
-  }
-
-  /* Social links */
-  .social-links {
-    text-align: center;
-    margin-top: 30px;
-  }
-  .social-links a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #fff;
-    background: #a020f0;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  .social-links a:hover {
-    background: #7a0fc0;
-  }
-  p{
-    width: 300px;
-  }
-  h5{text-align: center;
-    color: #a020f0;
-  }
-  /* 📱 Mobile (up to 768px) */
-@media (max-width: 768px) {
-  .container {
     flex-direction: column;
-    gap: 30px;
-  }
+    align-items: center;
 
-  .box {
-    height: 250px;
-    max-width: 90%;
-  }
+    gap: 4px;
 
-  .content h1 {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+.next-page-indicator.show {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    color: #a020f0;
+
+    font-size: 20px;
+
+    animation: scrollArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(160, 32, 240, 0.5);
+
+    border-radius: 10px;
+
+    background: rgba(160, 32, 240, 0.08);
+
+    color: #fff;
+
     font-size: 22px;
-    text-align: center;
-  }
 
-  .content p {
-    font-size: 14px;
-    line-height: 22px;
-  }
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-/* 📲 Tablet (769px – 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    flex-direction: row;
-    gap: 40px;
-  }
+.menu-btn:hover {
+    background: #a020f0;
 
-  .box {
-    height: 300px;
-    max-width: 45%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 26px;
-  }
-
-  .content p {
-    font-size: 15px;
-    line-height: 24px;
-  }
+    box-shadow:
+        0 0 20px rgba(160, 32, 240, 0.5);
 }
 
-/* 💻 Laptop (1025px – 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .container {
-    gap: 60px;
-  }
 
-  .box {
-    height: 350px;
-    max-width: 40%;
-  }
+/* =========================
+   MOBILE
+========================= */
 
-  .content {
-    max-width: 50%;
-  }
+@media (max-width: 600px) {
 
-  .content h1 {
-    font-size: 28px;
-  }
+    nav {
+        padding: 0 5%;
+    }
 
-  .content p {
-    font-size: 16px;
-    line-height: 26px;
-  }
+    .nav-links {
+        display: none;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: rgba(12, 9, 15, 0.97);
+
+        backdrop-filter: blur(20px);
+
+        border:
+            1px solid rgba(160, 32, 240, 0.25);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.mobile-open li {
+        width: 100%;
+    }
+
+    .nav-links.mobile-open a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 9px;
+
+        font-size: 13px;
+    }
+
+    .nav-links.mobile-open a:hover {
+        background:
+            rgba(160, 32, 240, 0.1);
+    }
+
 }
+    </style>
 
-/* 🖥️ Large PC screens (1441px and above) */
-@media (min-width: 1441px) {
-  .container {
-    gap: 80px;
-  }
+</head>
 
-  .box {
-    height: 400px;
-    max-width: 35%;
-  }
 
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 32px;
-  }
-
-  .content p {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
-
-</style>
 <body>
 
-<header>
-  <h1>CONTACT</h1>
-  <h5>Get in touch</h5>
-  <nav>
-    <a href="index.html">About</a>
-    <a href="skill.html">Skills</a>
-    <a href="services.html">Services</a>
-    <a href="samples.html">Samples</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
 
-<section class="contact">
-  <h2>CONTACT <span>ME</span></h2>
-  <div class="contact-wrapper">
-    
-    <!-- Left: Profile Image -->
-    <div class="profile-pic">
-      <h3>LETS WORK TOGETHER</h3>
-      <b><p>Have a project in mind? Let's create amazing projects together 😊</p></b>
-      <img src="WhatsApp Image 2026-07-21 at 10.31.31 AM.jpeg" alt="Nivetha">
-      
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html"
+           class="logo">
+
+            Nivetha<span>.</span>
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="skill.html">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="services.html">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="samples.html">
+                    Samples
+                </a>
+            </li>
+
+        </ul>
+
+<button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    ☰
+</button>
+        <a href="contact.html"
+           class="nav-contact">
+
+            Contact
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <main>
+
+        <section class="contact">
+
+
+            <!-- HEADER -->
+
+            <div class="header">
+
+                <span class="tag">
+                    GET IN TOUCH
+                </span>
+
+
+                <h1>
+
+                    Let's Create
+                    <span>Together.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Have a project, idea or collaboration in mind?
+                    Feel free to reach out. I'd love to hear from you.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CONTACT WRAPPER -->
+
+            <div class="contact-wrapper">
+
+
+                <!-- =====================
+                     CONTACT INFO
+                ====================== -->
+
+                <div class="contact-info">
+
+                    <h2>
+                        Contact Me
+                    </h2>
+
+
+                    <p>
+
+                        Let's talk about your next creative project
+                        and turn your idea into something engaging.
+
+                    </p>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ✉
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Email
+                            </small>
+
+                            <a href="mailto:niviquevisuals@gmail.com">
+
+                                niviquevisuals@gmail.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <small>
+                                WhatsApp
+                            </small>
+
+                            <a href="https://wa.me/9952433420"
+                               target="_blank">
+
+                                Chat on WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Location
+                            </small>
+
+                            <a href="#">
+                                India
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SOCIAL -->
+
+                    <div class="socials">
+
+                        <a href="https://www.instagram.com/nivique.visuals?igsh=ZTQyYW1tbDlhMDYw"
+                           target="_blank">
+                            IG
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/m-nivetha-808b812a1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                           target="_blank">
+                            IN
+                        </a>
+
+                        <a href="https://youtube.com/@nivique.visuals?si=dB1Ex9KRbBhydM1t"
+                           target="_blank">
+                            YT
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =====================
+                     FORM
+                ====================== -->
+
+                <div class="contact-form">
+
+                    <h2>
+                        Send a Message
+                    </h2>
+<form action="https://api.web3forms.com/submit"
+      method="POST">
+
+    <!-- Web3Forms Access Key -->
+    <input type="hidden"
+           name="access_key"
+           value="1725329a-ab26-4893-b462-95499198d8e6">
+
+
+    <!-- Subject -->
+    <input type="hidden"
+           name="subject"
+           value="New Portfolio Contact Message">
+
+
+    <!-- From Name -->
+    <input type="hidden"
+           name="from_name"
+           value="Nivetha Portfolio">
+
+
+    <!-- Name -->
+
+    <div class="input-group">
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder=" "
+            required
+        >
+
+        <label for="name">
+            Your Name
+        </label>
+
     </div>
-    
-    <!-- Right: Contact Form -->
-    <div class="contact-container">
-      <form action="https://script.google.com/macros/s/AKfycbyShcP36OxodEj3wAUOpbhlyWcR2INJeB5JiocLsTgVTjG9ftPWW21c_-6j3M32Fu5u/exec" method="post">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+    <!-- Email -->
 
-        <button type="submit">Send Message</button>
-      </form>
+    <div class="input-group">
 
-      <!-- Social Media Links -->
-      <div class="social-links">
-        <a href="https://www.instagram.com/nivique.visuals?igsh=MTA4a2FkazY3ZW82MQ==" target="_blank">Instagram</a>
-        <a href="https://wa.me/9952433420" target="_blank">WhatsApp</a>
-        <a href="mailto:niviquevisuals@gmail.com">Mail</a>
-       
-      </div>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=" "
+            required
+        >
+
+        <label for="email">
+            Email Address
+        </label>
+
     </div>
-  </div>
-</section>
 
+    <!-- Message -->
+
+    <div class="input-group">
+
+        <textarea
+            id="message"
+            name="message"
+            placeholder=" "
+            required
+        ></textarea>
+
+        <label for="message">
+            Your Message
+        </label>
+
+    </div>
+
+
+    <!-- Spam Protection -->
+
+    <input type="checkbox"
+           name="botcheck"
+           style="display:none;">
+
+
+    <!-- Submit -->
+
+    <button
+        type="submit"
+        class="send-btn">
+
+        Send Message  →
+
+    </button>
+
+</form>
+
+
+
+                    <!-- QUICK LINKS -->
+
+                    <div class="quick-contact">
+
+                        <a href="mailto:niviquevisuals@gmail.com">
+
+                            ✉ Email Me
+
+                        </a>
+
+
+                        <a href="https://wa.me/9952433420"
+                           target="_blank">
+
+                            💬 WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+<div class="next-page-indicator" id="nextIndicator">
+    <span>Scroll to continue</span>
+    <div class="scroll-arrow">↓</div>
+</div>
+
+<script>
+
+    const nextPage = "about.html";
+
+    let navigating = false;
+
+    /* Page entrance */
+
+    window.addEventListener("load", function () {
+
+        requestAnimationFrame(function () {
+
+            document.body.classList.add("page-ready");
+
+        });
+
+    });
+
+
+    /* Detect bottom */
+
+    window.addEventListener("scroll", function () {
+
+        const bottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 5;
+
+        const indicator =
+            document.getElementById("nextIndicator");
+
+        if (bottom) {
+
+            indicator.classList.add("show");
+
+        } else {
+
+            indicator.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* Go to next page */
+
+    function nextPageOpen() {
+
+        if (navigating) return;
+
+        navigating = true;
+
+        document.body.classList.add("page-leaving");
+
+        setTimeout(function () {
+
+            window.location.replace(nextPage);
+
+        }, 280);
+
+    }
+
+
+    /* Mouse wheel */
+
+    window.addEventListener(
+        "wheel",
+        function (event) {
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                event.deltaY > 0
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+    /* Mobile swipe */
+
+    let touchStart = 0;
+
+    window.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStart =
+                event.touches[0].clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    window.addEventListener(
+        "touchend",
+        function (event) {
+
+            const touchEnd =
+                event.changedTouches[0].clientY;
+
+            const swipeUp =
+                touchStart - touchEnd > 60;
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                swipeUp
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+</script>
+<script>
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+
+menuBtn.addEventListener("click", function () {
+
+    navLinks.classList.toggle("mobile-open");
+
+});
+
+
+/* Close menu after selecting a page */
+
+document.querySelectorAll(".nav-links a")
+    .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("mobile-open");
+
+        });
+
+    });
+
+</script>
 </body>
+
 </html>
 
