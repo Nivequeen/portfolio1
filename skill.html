@@ -1,284 +1,1295 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SKILLS</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
- header {
-      background: linear-gradient(135deg, #111, #444);
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    } 
-    header h1 {
-      margin: 0;
-    }
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 40px 20px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skills | Nivetha M</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #070509;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 520px;
+            height: 520px;
+
+            top: -220px;
+            right: -180px;
+
+            background: #a020f0;
+            opacity: 0.12;
+
+            filter: blur(140px);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            bottom: -200px;
+            left: -170px;
+
+            background: #7b2cff;
+            opacity: 0.08;
+
+            filter: blur(120px);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            width: 100%;
+            height: 80px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: rgba(7, 5, 9, 0.78);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+
+            font-family: "Poppins", sans-serif;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #a020f0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #fff;
+        }
+
+        .nav-links .active {
+            position: relative;
+        }
+
+        .nav-links .active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: -10px;
+
+            transform: translateX(-50%);
+
+            width: 5px;
+            height: 5px;
+
+            background: #a020f0;
+            border-radius: 50%;
+
+            box-shadow: 0 0 10px #a020f0;
+        }
+
+        .nav-contact {
+            text-decoration: none;
+
+            color: #fff;
+
+            padding: 10px 18px;
+
+            border: 1px solid #a020f0;
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-contact:hover {
+            background: #a020f0;
+
+            box-shadow:
+                0 0 25px rgba(160,32,240,0.55);
+        }
+
+
+        /* =========================
+           SKILLS SECTION
+        ========================= */
+
+        .skills {
+            min-height: 100vh;
+
+            padding: 135px 8% 80px;
+
+            max-width: 1250px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .section-header {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+        .tag {
+            color: #c88aff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .section-header h1 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: clamp(40px, 5vw, 60px);
+
+            line-height: 1.1;
+
+            margin: 14px 0;
+
+            letter-spacing: -2px;
+        }
+
+        .section-header h1 span {
+            color: #a020f0;
+
+            text-shadow:
+                0 0 20px rgba(160,32,240,0.4);
+        }
+
+        .section-header p {
+            color: #999;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           SKILL CARDS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            position: relative;
+
+            padding: 27px;
+
+            min-height: 220px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.055),
+                    rgba(255,255,255,0.018)
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+        .skill-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            top: -70px;
+            right: -70px;
+
+            background: #a020f0;
+
+            opacity: 0.12;
+
+            filter: blur(35px);
+
+            border-radius: 50%;
+
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(160,32,240,0.55);
+
+            box-shadow:
+                0 15px 40px rgba(160,32,240,0.14);
+        }
+
+        .skill-card:hover::before {
+            opacity: 0.3;
+        }
+
+
+        /* ICON */
+
+        .skill-icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: rgba(160,32,240,0.1);
+
+            border: 1px solid rgba(160,32,240,0.25);
+
+            font-size: 23px;
+
+            margin-bottom: 20px;
+        }
+
+        .skill-card h2 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 20px;
+
+            margin-bottom: 9px;
+        }
+
+        .skill-card p {
+            color: #8f8f8f;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           PROGRESS
+        ========================= */
+
+        .skill-info {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-info span {
+            color: #aaa;
+
+            font-size: 11px;
+        }
+
+        .skill-info strong {
+            color: #c88aff;
+
+            font-size: 11px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 5px;
+
+            background: rgba(255,255,255,0.08);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .progress span {
+            display: block;
+
+            height: 100%;
+
+            background: #a020f0;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 0 10px rgba(160,32,240,0.7);
+
+            animation: load 1.5s ease forwards;
+        }
+
+        @keyframes load {
+
+            from {
+                width: 0;
+            }
+
+        }
+
+
+        /* =========================
+           SOFTWARE SECTION
+        ========================= */
+
+        .tools-title {
+            text-align: center;
+
+            margin: 70px 0 25px;
+        }
+
+        .tools-title h2 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 25px;
+        }
+
+        .tools-title span {
+            color: #a020f0;
+        }
+
+        .tools {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .tool {
+            padding: 11px 18px;
+
+            border-radius: 30px;
+
+            color: #c7c7c7;
+
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .tool:hover {
+            color: #fff;
+
+            border-color: #a020f0;
+
+            background: rgba(160,32,240,0.1);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 15px rgba(160,32,240,0.2);
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .next-page {
+            text-align: center;
+
+            margin-top: 60px;
+        }
+
+        .next-page a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 23px;
+
+            color: #fff;
+
+            background: #a020f0;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.35s;
+
+            box-shadow:
+                0 0 20px rgba(160,32,240,0.3);
+        }
+
+        .next-page a:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 35px rgba(160,32,240,0.65);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .skills {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-contact {
+                padding: 9px 15px;
+            }
+
+            .skills {
+                padding: 110px 6% 60px;
+            }
+
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .section-header h1 {
+                font-size: 40px;
+            }
+
+            .section-header p {
+                font-size: 13px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                min-height: auto;
+
+                padding: 23px;
+            }
+
+            .tools-title {
+                margin-top: 50px;
+            }
+        }
+/* =========================
+   SMOOTH PAGE TRANSITION
+========================= */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
-.skill-card {
-  flex: 1 1 220px; /* flexible width */
-  max-width: 250px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.skill-card:hover {
-  transform: scale(1.05);
-}
-
-.skill-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #a020f0;
-}
-
-.skill-card h3 {
-  margin-top: 12px;
-  font-size: 1.2em;
-  color: #a020f0;
-  letter-spacing: 0.5px;
-}
-
-/* Popup modal */
-/* Popup modal */
-.modal {
-  display: none;   /* hidden by default */
-  position: static; /* no fixed overlay */
-  background: none; /* remove dark overlay */
-  width: auto;
-  height: auto;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 20px auto;
-}
-
-.modal-content {
-  background: #111;
-  color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
-  text-align: left;
-  box-shadow: 0 0 20px #a020f0;
+body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
+/* Page leaving */
 
-.close {
-  float: right;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #a020f0;
+body.page-leaving {
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
-/* 📱 Mobile adjustments */
-/* 📱 Mobile (up to 768px) */
-@media (max-width: 768px) {
-  .container {
+
+/* =========================
+   NEXT PAGE INDICATOR
+========================= */
+
+.next-page-indicator {
+    position: fixed;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform: translateX(-50%);
+
+    display: flex;
     flex-direction: column;
-    gap: 30px;
-  }
+    align-items: center;
 
-  .box {
-    height: 250px;
-    max-width: 90%;
-  }
+    gap: 4px;
 
-  .content h1 {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+.next-page-indicator.show {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    color: #a020f0;
+
+    font-size: 20px;
+
+    animation: scrollArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(160, 32, 240, 0.5);
+
+    border-radius: 10px;
+
+    background: rgba(160, 32, 240, 0.08);
+
+    color: #fff;
+
     font-size: 22px;
-    text-align: center;
-  }
 
-  .content p {
-    font-size: 14px;
-    line-height: 22px;
-  }
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-/* 📲 Tablet (769px – 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    flex-direction: row;
-    gap: 40px;
-  }
+.menu-btn:hover {
+    background: #a020f0;
 
-  .box {
-    height: 300px;
-    max-width: 45%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 26px;
-  }
-
-  .content p {
-    font-size: 15px;
-    line-height: 24px;
-  }
+    box-shadow:
+        0 0 20px rgba(160, 32, 240, 0.5);
 }
 
-/* 💻 Laptop (1025px – 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .container {
-    gap: 60px;
-  }
 
-  .box {
-    height: 350px;
-    max-width: 40%;
-  }
+/* =========================
+   MOBILE
+========================= */
 
-  .content {
-    max-width: 50%;
-  }
+@media (max-width: 600px) {
 
-  .content h1 {
-    font-size: 28px;
-  }
+    nav {
+        padding: 0 5%;
+    }
 
-  .content p {
-    font-size: 16px;
-    line-height: 26px;
-  }
+    .nav-links {
+        display: none;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: rgba(12, 9, 15, 0.97);
+
+        backdrop-filter: blur(20px);
+
+        border:
+            1px solid rgba(160, 32, 240, 0.25);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.mobile-open li {
+        width: 100%;
+    }
+
+    .nav-links.mobile-open a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 9px;
+
+        font-size: 13px;
+    }
+
+    .nav-links.mobile-open a:hover {
+        background:
+            rgba(160, 32, 240, 0.1);
+    }
+
 }
-
-/* 🖥️ Large PC screens (1441px and above) */
-@media (min-width: 1441px) {
-  .container {
-    gap: 80px;
-  }
-
-  .box {
-    height: 400px;
-    max-width: 35%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 32px;
-  }
-
-  .content p {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
-
-nav {
-  margin-top: 10px;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-  </style>
+    </style>
 </head>
+
+
 <body>
 
-<header>
-  <h1>Skills</h1>
-  <p>Specialized tools for Reels, Shorts & Ad Videos</p>
-   <nav>
-      <a href="index.html">About</a>
-      <a href="skill.html">Skills</a>
-      <a href="services.html">Services</a>
-      <a href="samples.html">Samples</a>
-      <a href="contact.html">Contact</a>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Nivetha<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="skills.html" class="active">Skills</a>
+            </li>
+
+            <li>
+                <a href="services.html">Services</a>
+            </li>
+
+            <li>
+                <a href="samples.html">Samples</a>
+            </li>
+
+        </ul>
+<button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    ☰
+</button>
+        <a href="contact.html" class="nav-contact">
+            Contact
+        </a>
+
     </nav>
-</header>
-<section>
-  <div class="skills-container">
-    <div class="skill-card" onclick="openModal('videoedit')">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgUJqpLs53MPnqlwuE8da15B0f9xWJxd19mbn3hypSH2i9A8E5zXPQN6x&s=10" alt="Video Editing">
-      <h3>Video Editing</h3>
-    </div>
-    <div class="skill-card" onclick="openModal('canva')">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy-audKGIx4wGH7DtN21X4LRXsUpGIylAELkl-I9vSgg&s=10" alt="Canva Design">
-      <h3>Canva Design</h3>
-    </div>
-    <div class="skill-card" onclick="openModal('aiscript')">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE8dtsNJSuojblU-GZBL9CEDTmF5X6r24W_pmwNj66vUyohli_P9xtfBg&s=10" alt="AI Scripted Video Creation">
-      <h3>AI Scripted Video Creation</h3>
-    </div>
-    <div class="skill-card" onclick="openModal('fastdelivery')">
-      <img src="https://elements-resized.envatousercontent.com/elements-video-cover-images/76d70f64-9dec-44c6-96eb-74ab9962d9be/video_preview/video_preview_0000.jpg?w=500&cf_fit=cover&q=85&format=auto&s=f123cf5cdc6d5d3126a161953d0f325614d3bf83a8036199f7aec916eb38ebfb" alt="Fast Delivery">
-      <h3>Fast Delivery</h3>
-    </div>
-  </div>
-</section>
 
-<!-- Modals -->
-<div id="videoedit" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('videoedit')">&times;</span>
-    <h2>Video Editing</h2>
-    <p>Professional editing for Reels, Shorts, and Ads with smooth transitions, effects, and storytelling that grabs attention.</p>
-  </div>
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <main>
+
+        <section class="skills">
+
+
+            <!-- HEADER -->
+
+            <div class="section-header">
+
+                <span class="tag">
+                    MY EXPERTISE
+                </span>
+
+                <h1>
+                    Skills That Bring
+                    <span>Ideas To Life.</span>
+                </h1>
+
+                <p>
+                    A combination of creative editing, storytelling
+                    and digital content skills to create videos that
+                    are engaging, polished and audience-friendly.
+                </p>
+
+            </div>
+
+
+            <!-- SKILL CARDS -->
+
+            <div class="skills-grid">
+
+
+                <!-- CARD 1 -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🎬
+                    </div>
+
+                    <h2>
+                        Video Editing
+                    </h2>
+
+                    <p>
+                        Clean cuts, smooth transitions, timing,
+                        pacing and creative visual storytelling.
+                    </p>
+
+                    <div class="skill-info">
+                        <span>Proficiency</span>
+                        <strong>90%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width: 90%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        ✂️
+                    </div>
+
+                    <h2>
+                        Reels & Shorts
+                    </h2>
+
+                    <p>
+                        Short-form content designed to capture
+                        attention quickly and maintain engagement.
+                    </p>
+
+                    <div class="skill-info">
+                        <span>Proficiency</span>
+                        <strong>88%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width: 88%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        📢
+                    </div>
+
+                    <h2>
+                        Advertisement Editing
+                    </h2>
+
+                    <p>
+                        Promotional videos with strong visuals,
+                        clear messaging and engaging presentation.
+                    </p>
+
+                    <div class="skill-info">
+                        <span>Proficiency</span>
+                        <strong>85%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width: 85%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        ✨
+                    </div>
+
+                    <h2>
+                        Creative Storytelling
+                    </h2>
+
+                    <p>
+                        Turning raw ideas into a visual story with
+                        structure, emotion and engaging flow.
+                    </p>
+
+                    <div class="skill-info">
+                        <span>Proficiency</span>
+                        <strong>87%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width: 87%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 5 -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🤖
+                    </div>
+
+                    <h2>
+                        AI Content
+                    </h2>
+
+                    <p>
+                        AI-assisted scripting, creative concepts and
+                        content development for modern video formats.
+                    </p>
+
+                    <div class="skill-info">
+                        <span>Proficiency</span>
+                        <strong>82%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width: 82%;"></span>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 6 -->
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🎨
+                    </div>
+
+                    <h2>
+                        Visual Creativity
+                    </h2>
+
+                    <p>
+                        Creative composition, visual style, typography
+                        and effects to make content stand out.
+                    </p>
+
+                    <div class="skill-info">
+                        <span>Proficiency</span>
+                        <strong>86%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <span style="width: 86%;"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div class="tools-title">
+
+                <h2>
+                    Tools & <span>Creative Areas</span>
+                </h2>
+
+            </div>
+
+
+            <div class="tools">
+
+                <div class="tool">
+                    Video Editing
+                </div>
+
+                <div class="tool">
+                    Reels
+                </div>
+
+                <div class="tool">
+                    Shorts
+                </div>
+
+                <div class="tool">
+                    Advertisements
+                </div>
+
+                <div class="tool">
+                    AI Content
+                </div>
+
+                <div class="tool">
+                    Storytelling
+                </div>
+
+                <div class="tool">
+                    Social Media Content
+                </div>
+
+                <div class="tool">
+                    Promotional Videos
+                </div>
+
+            </div>
+
+
+            <!-- NEXT -->
+
+            <div class="next-page">
+
+                <a href="services.html">
+                    Explore My Services →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<div class="next-page-indicator" id="nextIndicator">
+    <span>Scroll to continue</span>
+    <div class="scroll-arrow">↓</div>
 </div>
 
-<div id="canva" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('canva')">&times;</span>
-    <h2>Canva Design</h2>
-    <p>Creative Canva designs for thumbnails, posters, and social media visuals that make your brand stand out.</p>
-  </div>
-</div>
+<script>
 
-<div id="aiscript" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('aiscript')">&times;</span>
-    <h2>AI Scripted Video Creation</h2>
-    <p>AI-powered scripts turned into engaging videos — perfect for ads, explainer content, and social media campaigns.</p>
-  </div>
-</div>
+    const nextPage = "services.html";
 
-<div id="fastdelivery" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('fastdelivery')">&times;</span>
-    <h2>Fast Delivery</h2>
-    <p>Quick turnaround without compromising quality. Get your videos ready on time, every time.</p>
-  </div>
-</div>
+    let navigating = false;
 
-<script> 
-  function openModal(id) {
-    document.getElementById(id).style.display = 'flex';
-  }
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
+    /* Page entrance */
+
+    window.addEventListener("load", function () {
+
+        requestAnimationFrame(function () {
+
+            document.body.classList.add("page-ready");
+
+        });
+
+    });
+
+
+    /* Detect bottom */
+
+    window.addEventListener("scroll", function () {
+
+        const bottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 5;
+
+        const indicator =
+            document.getElementById("nextIndicator");
+
+        if (bottom) {
+
+            indicator.classList.add("show");
+
+        } else {
+
+            indicator.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* Go to next page */
+
+    function nextPageOpen() {
+
+        if (navigating) return;
+
+        navigating = true;
+
+        document.body.classList.add("page-leaving");
+
+        setTimeout(function () {
+
+            window.location.replace(nextPage);
+
+        }, 280);
+
+    }
+
+
+    /* Mouse wheel */
+
+    window.addEventListener(
+        "wheel",
+        function (event) {
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                event.deltaY > 0
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+    /* Mobile swipe */
+
+    let touchStart = 0;
+
+    window.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStart =
+                event.touches[0].clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    window.addEventListener(
+        "touchend",
+        function (event) {
+
+            const touchEnd =
+                event.changedTouches[0].clientY;
+
+            const swipeUp =
+                touchStart - touchEnd > 60;
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                swipeUp
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
 </script>
+<script>
 
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+
+menuBtn.addEventListener("click", function () {
+
+    navLinks.classList.toggle("mobile-open");
+
+});
+
+
+/* Close menu after selecting a page */
+
+document.querySelectorAll(".nav-links a")
+    .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("mobile-open");
+
+        });
+
+    });
+
+</script>
 </body>
 </html>
 
