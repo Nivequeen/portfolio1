@@ -1,280 +1,1524 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sample Works - Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #111, #444);
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .samples-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-    .sample-card {
-      width: 280px;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .sample-card:hover {
-      transform: scale(1.05);
-    }
-    .sample-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 0 15px #a020f0;
-    }
-    .sample-card h3 {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #a020f0; /* purple accent */
-      letter-spacing: 0.5px;
-    }
-    /* Popup modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      text-align: left;
-      box-shadow: 0 0 15px #a020f0;
-    }
-    .close {
-      float: right;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: #a020f0;
-    }
-    .watch-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 15px;
-      background: #a020f0;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .watch-btn:hover {
-      background: #7a0fc0;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    p{
-      color: #a020f0;
-    }
-    /* 📱 Mobile (up to 768px) */
-@media (max-width: 768px) {
-  .container {
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Samples | Nivetha M</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+
+            background: #070509;
+
+            color: #fff;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 520px;
+            height: 520px;
+
+            top: -220px;
+            right: -170px;
+
+            background: #a020f0;
+
+            opacity: 0.13;
+
+            filter: blur(140px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            bottom: -200px;
+            left: -170px;
+
+            background: #7b2cff;
+
+            opacity: 0.08;
+
+            filter: blur(130px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+
+            width: 100%;
+
+            height: 80px;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: rgba(7, 5, 9, 0.78);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+
+        .logo {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 23px;
+
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #a020f0;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            color: #999;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links .active {
+
+            color: #fff;
+        }
+
+
+        .nav-links .active {
+
+            position: relative;
+        }
+
+
+        .nav-links .active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -10px;
+
+            transform: translateX(-50%);
+
+            width: 5px;
+            height: 5px;
+
+            background: #a020f0;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 10px #a020f0;
+        }
+
+
+        .nav-contact {
+
+            text-decoration: none;
+
+            color: #fff;
+
+            padding: 10px 18px;
+
+            border: 1px solid #a020f0;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-contact:hover {
+
+            background: #a020f0;
+
+            box-shadow:
+                0 0 25px rgba(160,32,240,0.55);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .samples {
+
+            max-width: 1200px;
+
+            min-height: 100vh;
+
+            margin: auto;
+
+            padding:
+                135px 7% 80px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+
+        .tag {
+
+            display: inline-block;
+
+            color: #c88aff;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .header h1 {
+
+            font-family: "Poppins", sans-serif;
+
+            font-size:
+                clamp(42px, 5vw, 62px);
+
+            line-height: 1.1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .header h1 span {
+
+            color: #a020f0;
+
+            text-shadow:
+                0 0 22px rgba(160,32,240,0.45);
+        }
+
+
+        .header p {
+
+            color: #929292;
+
+            font-size: 15px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =========================
+           PROJECT GRID
+        ========================= */
+
+        .projects {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           PROJECT CARD
+        ========================= */
+
+        .project {
+
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 460px;
+
+            padding: 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            transition:
+                transform 0.45s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+
+
+        .project::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+            height: 220px;
+
+            top: -130px;
+            right: -110px;
+
+            background: #a020f0;
+
+            opacity: 0.14;
+
+            filter: blur(50px);
+
+            border-radius: 50%;
+
+            transition: 0.5s;
+        }
+
+
+        .project:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(160,32,240,0.6);
+
+            box-shadow:
+                0 25px 55px
+                rgba(160,32,240,0.16);
+        }
+
+
+        .project:hover::before {
+
+            opacity: 0.3;
+        }
+
+
+        /* =========================
+           NUMBER
+        ========================= */
+
+        .number {
+
+            position: absolute;
+
+            top: 25px;
+            right: 25px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           VISUAL
+        ========================= */
+
+        .visual {
+
+            position: absolute;
+
+            top: 25px;
+            left: 25px;
+            right: 25px;
+
+            height: 210px;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #24102f,
+                    #0e0b12
+                );
+
+            border:
+                1px solid
+                rgba(160,32,240,0.18);
+        }
+
+
+        .visual::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(160,32,240,0.22),
+                    transparent 55%
+                );
+        }
+
+
+        /* =========================
+           VISUAL ICON
+        ========================= */
+
+        .visual-icon {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 72px;
+            height: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(160,32,240,0.9);
+
+            font-size: 27px;
+
+            box-shadow:
+                0 0 30px
+                rgba(160,32,240,0.6);
+
+            transition: 0.4s;
+        }
+
+
+        .project:hover .visual-icon {
+
+            transform: scale(1.12);
+
+            box-shadow:
+                0 0 45px
+                rgba(160,32,240,0.8);
+        }
+
+
+        /* =========================
+           CATEGORY
+        ========================= */
+
+        .category {
+
+            display: inline-block;
+
+            width: fit-content;
+
+            padding: 7px 11px;
+
+            margin-bottom: 13px;
+
+            border-radius: 20px;
+
+            color: #d5b0ff;
+
+            background:
+                rgba(160,32,240,0.09);
+
+            border:
+                1px solid
+                rgba(160,32,240,0.25);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .project h2 {
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .project p {
+
+            color: #929292;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =========================
+           WATCH BUTTON
+        ========================= */
+
+        .watch {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            width: 100%;
+
+            padding: 12px 18px;
+
+            border-radius: 10px;
+
+            background: #a020f0;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition: 0.35s;
+
+            box-shadow:
+                0 0 18px
+                rgba(160,32,240,0.25);
+        }
+
+
+        .watch:hover {
+
+            background: #b43cff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 30px
+                rgba(160,32,240,0.65);
+        }
+
+
+        /* =========================
+           BOTTOM CTA
+        ========================= */
+
+        .cta {
+
+            margin-top: 55px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            border:
+                1px solid
+                rgba(160,32,240,0.25);
+
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(160,32,240,0.11),
+                    rgba(255,255,255,0.025)
+                );
+        }
+
+
+        .cta h2 {
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 23px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .cta p {
+
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .cta a {
+
+            display: inline-flex;
+
+            padding: 12px 22px;
+
+            background: #a020f0;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .cta a:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 30px
+                rgba(160,32,240,0.6);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            nav {
+
+                padding: 0 5%;
+            }
+
+
+            .nav-links {
+
+                gap: 15px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 12px;
+            }
+
+
+            .samples {
+
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+
+            .projects {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+
+                height: 70px;
+            }
+
+
+            .logo {
+
+                font-size: 19px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .nav-contact {
+
+                padding:
+                    9px 15px;
+            }
+
+
+            .samples {
+
+                padding:
+                    110px 6% 60px;
+            }
+
+
+            .header {
+
+                margin-bottom: 35px;
+            }
+
+
+            .header h1 {
+
+                font-size: 40px;
+            }
+
+
+            .header p {
+
+                font-size: 13px;
+            }
+
+
+            .projects {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .project {
+
+                min-height: 450px;
+
+                padding: 25px;
+            }
+
+
+            .visual {
+
+                left: 25px;
+                right: 25px;
+
+                height: 205px;
+            }
+
+
+            .cta {
+
+                padding: 25px;
+            }
+        }
+/* =========================
+   SMOOTH PAGE TRANSITION
+========================= */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Page leaving */
+
+body.page-leaving {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+/* =========================
+   NEXT PAGE INDICATOR
+========================= */
+
+.next-page-indicator {
+    position: fixed;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform: translateX(-50%);
+
+    display: flex;
     flex-direction: column;
-    gap: 30px;
-  }
+    align-items: center;
 
-  .box {
-    height: 250px;
-    max-width: 90%;
-  }
+    gap: 4px;
 
-  .content h1 {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+.next-page-indicator.show {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    color: #a020f0;
+
+    font-size: 20px;
+
+    animation: scrollArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(160, 32, 240, 0.5);
+
+    border-radius: 10px;
+
+    background: rgba(160, 32, 240, 0.08);
+
+    color: #fff;
+
     font-size: 22px;
-    text-align: center;
-  }
 
-  .content p {
-    font-size: 14px;
-    line-height: 22px;
-  }
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-/* 📲 Tablet (769px – 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    flex-direction: row;
-    gap: 40px;
-  }
+.menu-btn:hover {
+    background: #a020f0;
 
-  .box {
-    height: 300px;
-    max-width: 45%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 26px;
-  }
-
-  .content p {
-    font-size: 15px;
-    line-height: 24px;
-  }
+    box-shadow:
+        0 0 20px rgba(160, 32, 240, 0.5);
 }
 
-/* 💻 Laptop (1025px – 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .container {
-    gap: 60px;
-  }
 
-  .box {
-    height: 350px;
-    max-width: 40%;
-  }
+/* =========================
+   MOBILE
+========================= */
 
-  .content {
-    max-width: 50%;
-  }
+@media (max-width: 600px) {
 
-  .content h1 {
-    font-size: 28px;
-  }
+    nav {
+        padding: 0 5%;
+    }
 
-  .content p {
-    font-size: 16px;
-    line-height: 26px;
-  }
+    .nav-links {
+        display: none;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: rgba(12, 9, 15, 0.97);
+
+        backdrop-filter: blur(20px);
+
+        border:
+            1px solid rgba(160, 32, 240, 0.25);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.mobile-open li {
+        width: 100%;
+    }
+
+    .nav-links.mobile-open a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 9px;
+
+        font-size: 13px;
+    }
+
+    .nav-links.mobile-open a:hover {
+        background:
+            rgba(160, 32, 240, 0.1);
+    }
+
 }
+    </style>
 
-/* 🖥️ Large PC screens (1441px and above) */
-@media (min-width: 1441px) {
-  .container {
-    gap: 80px;
-  }
-
-  .box {
-    height: 400px;
-    max-width: 35%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 32px;
-  }
-
-  .content p {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
-
-  </style>
 </head>
+
+
 <body>
 
-<header>
-  <h1>Sample Works</h1>
-  <p>Reels • Shorts • Ad Videos</p>
-     <nav>
-      <a href="index.html">About</a>
-      <a href="skill.html">Skills</a>
-      <a href="services.html">Services</a>
-      <a href="samples.html">Samples</a>
-      <a href="contact.html">Contact</a>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html"
+           class="logo">
+
+            Nivetha<span>.</span>
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="skills.html">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="services.html">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="samples.html"
+                   class="active">
+                    Samples
+                </a>
+            </li>
+
+        </ul>
+
+<button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    ☰
+</button>
+        <a href="contact.html"
+           class="nav-contact">
+
+            Contact
+
+        </a>
+
     </nav>
-</header>
 
-<section>
-  <div class="samples-container">
-    <div class="sample-card" onclick="openModal('fashion')">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBXX0znkchiZRWKxFl9l4YW31lCFDZLrLeaHK7NtultA&s=10" alt="Fashion Reel">
-      <h3>Client Project</h3>
-    </div>
-    <div class="sample-card" onclick="openModal('product')">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF1eWAAm5BH0YrfITlOjkal03CfKDjKJwP4RlFHb_JxciW_2-ytRByNVs&s=10" alt="Product Ad">
-      <h3>Instagram Reels</h3>
-    </div>
-    <div class="sample-card" onclick="openModal('influencer')">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR05ZrKQrnrJP9a-gTnCuVZOA-op0x_IUHQ6zzTUJOSAA&s" alt="Influencer Short">
-      <h3>AI Scripted Videos</h3>
-    </div>
-  </div>
-</section>
 
-<!-- Modals -->
-<div id="fashion" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('fashion')">&times;</span>
-    <h2>Client Project</h2>
-    <p>A stylish reel crafted for a fashion brand — featuring fast cuts, smooth transitions, and music sync to highlight their latest collection.</p>
-    <a href="https://www.instagram.com/reel/Da5WIRxtdRt/?igsh=MWg3OWkzaG1jZnJhNw==" target="_blank" class="watch-btn">Watch Demo</a>
-  </div>
+
+    <!-- =========================
+         SAMPLES
+    ========================= -->
+
+    <main>
+
+        <section class="samples">
+
+
+            <!-- HEADER -->
+
+            <div class="header">
+
+                <span class="tag">
+                    MY WORK
+                </span>
+
+
+                <h1>
+
+                    Selected
+                    <span>Samples.</span>
+
+                </h1>
+
+
+                <p>
+
+                    A few creative projects showcasing my approach
+                    to video editing, visual storytelling and
+                    engaging social media content.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 THREE PROJECTS
+            ========================= -->
+
+            <div class="projects">
+
+
+                <!-- =====================
+                     01 CLIENT PROJECT
+                ====================== -->
+
+                <article class="project">
+
+                    <span class="number">
+                        01
+                    </span>
+
+
+                    <div class="visual">
+
+                        <div class="visual-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1280px-Instagram_logo_2022.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+                                 alt="Instagram Icon"
+                                 style="width: 40px; height: 40px;">
+                        </div>
+
+                    </div>
+
+
+                    <span class="category">
+                        Instagram Reels
+                    </span>
+
+
+                    <h2>
+                         Instagram Reels
+                    </h2>
+
+
+                    <p>
+
+                        A stylish reel crafted for a fashion brand,
+                        featuring fast cuts, smooth transitions and
+                        music sync to highlight their latest collection.
+
+                    </p>
+
+
+                    <a href="https://www.instagram.com/reel/DavAtsgz45c/?igsh=NXhrM3Q1aDVucTUx"
+                       target="_blank"
+                       class="watch">
+
+                        ▶ Watch Demo
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =====================
+                     02 INSTAGRAM REELS
+                ====================== -->
+
+                <article class="project">
+
+                    <span class="number">
+                        02
+                    </span>
+
+
+                    <div class="visual">
+
+                        <div class="visual-icon">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjfX54HFnA3H71xDt7u1tBppFI2NXc2CjXFwJe-vX42A&s=10"
+                                 alt="Instagram Icon"
+                                 style="width: 40px; height: 40px;">
+                        </div>
+
+                    </div>
+
+
+                    <span class="category">
+                         Client Project
+                    </span>
+
+
+                    <h2>
+                         Client Project
+                    </h2>
+
+
+                    <p>
+
+                        An engaging product showcase reel with
+                        clean storytelling, bold captions and a
+                        clear call-to-action for social campaigns.
+
+                    </p>
+
+
+                    <a href="https://www.instagram.com/reel/Da5WIRxtdRt/?igsh=OHgwcGZnMWR6NzNt"
+                       target="_blank"
+                       class="watch">
+
+                        ▶ Watch Demo
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =====================
+                     03 AI SCRIPTED
+                ====================== -->
+
+                <article class="project">
+
+                    <span class="number">
+                        03
+                    </span>
+
+
+                    <div class="visual">
+
+                        <div class="visual-icon">
+                            <img src="https://img.magnific.com/premium-vector/ai-generative-banner-concept-digital-style_208588-4080.jpg?semt=ais_test_b&w=740&q=80"
+                                 alt="Instagram Icon"
+                                 style="width: 40px; height: 40px;">
+                        </div>
+
+                    </div>
+
+
+                    <span class="category">
+                        AI Scripted Videos
+                    </span>
+
+
+                    <h2>
+                         AI Scripted Videos
+                    </h2>
+
+
+                    <p>
+
+                        An AI-powered short video created for
+                        influencer marketing, featuring trendy
+                        transitions, captions and vibrant color grading.
+
+                    </p>
+
+
+                    <a href="https://www.instagram.com/reel/Da5XGj6T6Ay/?igsh=MTZ1YWN0bnhhamFtMw=="
+                       target="_blank"
+                       class="watch">
+
+                        ▶ Watch Demo
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 CTA
+            ========================= -->
+
+            <div class="cta">
+
+                <h2>
+                    Want Your Project Here?
+                </h2>
+
+
+                <p>
+                    Let's create something creative together.
+                </p>
+
+
+                <a href="contact.html">
+                    Start a Project →
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+<div class="next-page-indicator" id="nextIndicator">
+    <span>Scroll to continue</span>
+    <div class="scroll-arrow">↓</div>
 </div>
-
-<div id="product" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('product')">&times;</span>
-    <h2>Instagram Reels</h2>
-    <p>Engaging product showcase reel with clean storytelling, bold captions, and a clear call-to-action — designed to boost social media campaigns.</p>
-    <a href="https://www.instagram.com/reel/DavAtsgz45c/?utm_source=ig_web_button_share_sheet" target="_blank" class="watch-btn">Watch Demo</a>
-  </div>
-</div>
-
-<div id="influencer" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('influencer')">&times;</span>
-    <h2>AI Scripted Videos</h2>
-    <p>AI-powered short video created for influencer marketing — complete with trendy transitions, captions, and vibrant color grading optimized for mobile screens.</p>
-    <a href="https://www.instagram.com/reel/Da5XGj6T6Ay/?igsh=ZTFvb241YjRmNzBz" target="_blank" class="watch-btn">Watch Demo</a>
-  </div>
-</div>
-
 
 <script>
-  function openModal(id) {
-    document.getElementById(id).style.display = 'flex';
-  }
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-  }
-</script>
 
+    const nextPage = "contact.html";
+
+    let navigating = false;
+
+    /* Page entrance */
+
+    window.addEventListener("load", function () {
+
+        requestAnimationFrame(function () {
+
+            document.body.classList.add("page-ready");
+
+        });
+
+    });
+
+
+    /* Detect bottom */
+
+    window.addEventListener("scroll", function () {
+
+        const bottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 5;
+
+        const indicator =
+            document.getElementById("nextIndicator");
+
+        if (bottom) {
+
+            indicator.classList.add("show");
+
+        } else {
+
+            indicator.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* Go to next page */
+
+    function nextPageOpen() {
+
+        if (navigating) return;
+
+        navigating = true;
+
+        document.body.classList.add("page-leaving");
+
+        setTimeout(function () {
+
+            window.location.replace(nextPage);
+
+        }, 280);
+
+    }
+
+
+    /* Mouse wheel */
+
+    window.addEventListener(
+        "wheel",
+        function (event) {
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                event.deltaY > 0
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+    /* Mobile swipe */
+
+    let touchStart = 0;
+
+    window.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStart =
+                event.touches[0].clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    window.addEventListener(
+        "touchend",
+        function (event) {
+
+            const touchEnd =
+                event.changedTouches[0].clientY;
+
+            const swipeUp =
+                touchStart - touchEnd > 60;
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                swipeUp
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+</script>
+<script>
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+
+menuBtn.addEventListener("click", function () {
+
+    navLinks.classList.toggle("mobile-open");
+
+});
+
+
+/* Close menu after selecting a page */
+
+document.querySelectorAll(".nav-links a")
+    .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("mobile-open");
+
+        });
+
+    });
+
+</script>
 </body>
+
 </html>
 
