@@ -1,327 +1,1312 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Nivetha Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #111, #444);
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | Nivetha M</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #070509;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 520px;
+            height: 520px;
+
+            top: -220px;
+            right: -170px;
+
+            background: #a020f0;
+            opacity: 0.12;
+
+            filter: blur(140px);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            bottom: -200px;
+            left: -170px;
+
+            background: #7b2cff;
+            opacity: 0.08;
+
+            filter: blur(120px);
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            width: 100%;
+            height: 80px;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            background: rgba(7, 5, 9, 0.78);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            color: #fff;
+            text-decoration: none;
+
+            font-family: "Poppins", sans-serif;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #a020f0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #fff;
+        }
+
+        .nav-links .active {
+            position: relative;
+        }
+
+        .nav-links .active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: -10px;
+
+            transform: translateX(-50%);
+
+            width: 5px;
+            height: 5px;
+
+            background: #a020f0;
+            border-radius: 50%;
+
+            box-shadow: 0 0 10px #a020f0;
+        }
+
+        .nav-contact {
+            text-decoration: none;
+
+            color: #fff;
+
+            padding: 10px 18px;
+
+            border: 1px solid #a020f0;
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-contact:hover {
+            background: #a020f0;
+
+            box-shadow:
+                0 0 25px rgba(160,32,240,0.55);
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            min-height: 100vh;
+
+            padding: 135px 8% 80px;
+
+            max-width: 1250px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .section-header {
+            max-width: 720px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .tag {
+            color: #c88aff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .section-header h1 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: clamp(40px, 5vw, 60px);
+
+            line-height: 1.1;
+
+            margin: 14px 0;
+
+            letter-spacing: -2px;
+        }
+
+        .section-header h1 span {
+            color: #a020f0;
+
+            text-shadow:
+                0 0 20px rgba(160,32,240,0.4);
+        }
+
+        .section-header p {
+            color: #999;
+
+            font-size: 15px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =========================
+           SERVICE GRID
+        ========================= */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           SERVICE CARD
+        ========================= */
+
+        .service-card {
+            position: relative;
+
+            min-height: 310px;
+
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.06),
+                    rgba(255,255,255,0.018)
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.45s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+
+
+        /* Glow */
+
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -110px;
+            right: -100px;
+
+            background: #a020f0;
+
+            opacity: 0.12;
+
+            filter: blur(45px);
+
+            border-radius: 50%;
+
+            transition: 0.5s;
+        }
+
+
+        /* Number */
+
+        .service-number {
+            position: absolute;
+
+            top: 22px;
+            right: 25px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+
+            color: #5c5c5c;
+
+            font-weight: 700;
+        }
+
+
+        /* Icon */
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: rgba(160,32,240,0.1);
+
+            border: 1px solid rgba(160,32,240,0.25);
+
+            font-size: 25px;
+
+            margin-bottom: 25px;
+
+            transition: 0.4s;
+        }
+
+
+        .service-card h2 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #929292;
+
+            font-size: 13px;
+
+            line-height: 1.75;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* Service list */
+
+        .service-list {
+            list-style: none;
+
+            margin-top: auto;
+        }
+
+        .service-list li {
+            color: #aaa;
+
+            font-size: 12px;
+
+            margin-top: 9px;
+        }
+
+        .service-list li::before {
+            content: "✓";
+
+            color: #a020f0;
+
+            font-weight: 800;
+
+            margin-right: 8px;
+        }
+
+
+        /* Hover */
+
+        .service-card:hover {
+            transform: translateY(-10px);
+
+            border-color: rgba(160,32,240,0.6);
+
+            box-shadow:
+                0 20px 50px rgba(160,32,240,0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.28;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.08);
+
+            background: rgba(160,32,240,0.18);
+
+            box-shadow:
+                0 0 20px rgba(160,32,240,0.2);
+        }
+
+
+        /* =========================
+           FEATURE STRIP
+        ========================= */
+
+        .feature-strip {
+            margin-top: 60px;
+
+            padding: 28px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    rgba(160,32,240,0.11),
+                    rgba(255,255,255,0.025)
+                );
+
+            border: 1px solid rgba(160,32,240,0.25);
+
+            border-radius: 20px;
+        }
+
+        .feature-text h2 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 21px;
+
+            margin-bottom: 7px;
+        }
+
+        .feature-text p {
+            color: #929292;
+
+            font-size: 13px;
+        }
+
+        .feature-btn {
+            flex-shrink: 0;
+
+            padding: 13px 22px;
+
+            background: #a020f0;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.35s;
+
+            box-shadow:
+                0 0 20px rgba(160,32,240,0.3);
+        }
+
+        .feature-btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 35px rgba(160,32,240,0.65);
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .services {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                height: 70px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-contact {
+                padding: 9px 15px;
+            }
+
+            .services {
+                padding: 110px 6% 60px;
+            }
+
+            .section-header {
+                margin-bottom: 35px;
+            }
+
+            .section-header h1 {
+                font-size: 40px;
+            }
+
+            .section-header p {
+                font-size: 13px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                min-height: 285px;
+
+                padding: 25px;
+            }
+
+            .feature-strip {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 25px;
+            }
+
+            .feature-btn {
+                width: 100%;
+
+                text-align: center;
+            }
+        }
+/* =========================
+   SMOOTH PAGE TRANSITION
+========================= */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
-.services-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-around;
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: auto;
-  align-items: flex-start;
-
-}
-
-.service-card {
-    flex: 0 0 300px;
-width: 300px;
-  background-color: #111;
-  border-radius: 20px;
-  padding:30px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #a020f0;
-}
-
-.service-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-  filter: brightness(0) invert(1);
-}
-
-.service-card h3 {
-  color: #a020f0;
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  letter-spacing: 0.5px;
-}
-
-.service-card p {
-  font-size: 0.9em;
-  color: #ccc;
-  line-height: 1.4;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.5em;
-  color: #333;;
-  margin-top: 40px;
-}
-
-h2 span {
-  color: #333;
-}
-
-/* Popup modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #111;
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  text-align: left;
-  box-shadow: 0 0 15px #a020f0;
-}
-
-.close {
-  float: right;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #a020f0;
-}
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-  gap: 30px; /* consistent gap between cards */
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.service-card {
-  background-color: #111;
-  border-radius: 20px;
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  width: 100%;   /* card fills its grid cell */
-  box-sizing: border-box; /* ensures padding doesn’t break layout */
+body.page-ready {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #a020f0;
+/* Page leaving */
+
+body.page-leaving {
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
-.service-card h3 {
-  color: #a020f0;
-  margin-bottom: 10px;
-  font-size: 1.2em;
-}
 
-.service-card p {
-  font-size: 0.95em;
-  color: #ccc;
-  line-height: 1.5;
-}
+/* =========================
+   NEXT PAGE INDICATOR
+========================= */
 
-/* Responsive tweaks */
-/* 📱 Mobile (up to 768px) */
-@media (max-width: 768px) {
-  .container {
+.next-page-indicator {
+    position: fixed;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform: translateX(-50%);
+
+    display: flex;
     flex-direction: column;
-    gap: 30px;
-  }
+    align-items: center;
 
-  .box {
-    height: 250px;
-    max-width: 90%;
-  }
+    gap: 4px;
 
-  .content h1 {
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+    pointer-events: none;
+
+    z-index: 9999;
+}
+
+.next-page-indicator.show {
+    opacity: 1;
+}
+
+.scroll-arrow {
+    color: #a020f0;
+
+    font-size: 20px;
+
+    animation: scrollArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(160, 32, 240, 0.5);
+
+    border-radius: 10px;
+
+    background: rgba(160, 32, 240, 0.08);
+
+    color: #fff;
+
     font-size: 22px;
-    text-align: center;
-  }
 
-  .content p {
-    font-size: 14px;
-    line-height: 22px;
-  }
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-/* 📲 Tablet (769px – 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    flex-direction: row;
-    gap: 40px;
-  }
+.menu-btn:hover {
+    background: #a020f0;
 
-  .box {
-    height: 300px;
-    max-width: 45%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 26px;
-  }
-
-  .content p {
-    font-size: 15px;
-    line-height: 24px;
-  }
-}
-
-/* 💻 Laptop (1025px – 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .container {
-    gap: 60px;
-  }
-
-  .box {
-    height: 350px;
-    max-width: 40%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 28px;
-  }
-
-  .content p {
-    font-size: 16px;
-    line-height: 26px;
-  }
-}
-
-/* 🖥️ Large PC screens (1441px and above) */
-@media (min-width: 1441px) {
-  .container {
-    gap: 80px;
-  }
-
-  .box {
-    height: 400px;
-    max-width: 35%;
-  }
-
-  .content {
-    max-width: 50%;
-  }
-
-  .content h1 {
-    font-size: 32px;
-  }
-
-  .content p {
-    font-size: 18px;
-    line-height: 28px;
-  }
+    box-shadow:
+        0 0 20px rgba(160, 32, 240, 0.5);
 }
 
 
+/* =========================
+   MOBILE
+========================= */
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
+@media (max-width: 600px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: rgba(12, 9, 15, 0.97);
+
+        backdrop-filter: blur(20px);
+
+        border:
+            1px solid rgba(160, 32, 240, 0.25);
+
+        border-radius: 15px;
+
+        box-shadow:
+            0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.mobile-open li {
+        width: 100%;
+    }
+
+    .nav-links.mobile-open a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border-radius: 9px;
+
+        font-size: 13px;
+    }
+
+    .nav-links.mobile-open a:hover {
+        background:
+            rgba(160, 32, 240, 0.1);
+    }
+
 }
-nav a:hover {
-  text-decoration: underline;
-}
-p{
-  color: #a020f0;
-}
-</style>
+    </style>
+</head>
+
+
 <body>
 
-<header>
-  <h1>SERVICES</h1>
-  <p>Works provided </p>
-     <nav>
-      <a href="index.html">About</a>
-      <a href="skill.html">Skills</a>
-      <a href="services.html">Services</a>
-      <a href="samples.html">Samples</a>
-      <a href="contact.html">Contact</a>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Nivetha<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="skill.html">Skills</a>
+            </li>
+
+            <li>
+                <a href="services.html" class="active">Services</a>
+            </li>
+
+            <li>
+                <a href="samples.html">Samples</a>
+            </li>
+
+        </ul>
+<button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    ☰
+</button>
+        <a href="contact.html" class="nav-contact">
+            Contact
+        </a>
+
     </nav>
-</header>
 
-<section class="services">
-  <h2>SERV<span>ICES</span></h2>
-  <div class="service-grid">
-    <div class="service-card">
 
-      <h3>INSTAGRAM REELS</h3>
-      <p>Engaging reels that boost your reach.</p>
-    </div>
-    <div class="service-card">
-  
-      <h3>YOUTUBE SHORTS</h3>
-      <p>Short-form videos that capture attention.</p>
-    </div>
-    <div class="service-card">
+    <!-- =========================
+         SERVICES
+    ========================= -->
 
-      <h3>PROMOTION VIDEOS</h3>
-      <p>Creative videos to showcase your brand.</p>
-    </div>
-    <div class="service-card">
+    <main>
 
-      <h3>ADVERTISEMENT</h3>
-      <p>Highlight your club, brand, or product.</p>
-    </div>
-    <div class="service-card">
+        <section class="services">
 
-      <h3>AI SCRIPTED VIDEO</h3>
-      <p>AI-powered videos with creative storytelling.</p>
-    </div>
-    <div class="service-card">
-    
-      <h3>SUBTITLE EDITING</h3>
-      <p>Clean, accurate, and stylish subtitles.</p>
-    </div>
-    <div class="service-card">
 
-      <h3>PORTFOLIO WEBSITES</h3>
-      <p>Showcasing portfolio websites designed using Canva.</p>
-    </div>
-    <div class="service-card">
-    
-      <h3>BUSINESS WEBSITES</h3>
-      <p>Professional business websites created using Canva.</p>
-    </div>
-  </div>
-</section>
+            <!-- HEADER -->
 
+            <div class="section-header">
+
+                <span class="tag">
+                    WHAT I DO
+                </span>
+
+                <h1>
+                    Creative Services
+                    <span>For Your Content.</span>
+                </h1>
+
+                <p>
+                    From short-form social media content to promotional
+                    videos, I create edits that are visually engaging,
+                    clear and designed to connect with your audience.
+                </p>
+
+            </div>
+
+
+            <!-- SERVICE CARDS -->
+
+            <div class="services-grid">
+
+
+                <!-- SERVICE 01 -->
+
+                <div class="service-card">
+
+                    <span class="service-number">
+                        01
+                    </span>
+
+                    <div class="service-icon">
+                        🎬
+                    </div>
+
+                    <h2>
+                        Video Editing
+                    </h2>
+
+                    <p>
+                        Professional editing that turns raw footage
+                        into polished and engaging visual content.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>
+                            Clean cuts & transitions
+                        </li>
+
+                        <li>
+                            Music & sound syncing
+                        </li>
+
+                        <li>
+                            Effects & visual enhancement
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 02 -->
+
+                <div class="service-card">
+
+                    <span class="service-number">
+                        02
+                    </span>
+
+                    <div class="service-icon">
+                        📱
+                    </div>
+
+                    <h2>
+                        Reels & Shorts
+                    </h2>
+
+                    <p>
+                        Short-form videos created to grab attention
+                        quickly and keep viewers engaged.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>
+                            Instagram Reels
+                        </li>
+
+                        <li>
+                            YouTube Shorts
+                        </li>
+
+                        <li>
+                            Vertical social content
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 03 -->
+
+                <div class="service-card">
+
+                    <span class="service-number">
+                        03
+                    </span>
+
+                    <div class="service-icon">
+                        📢
+                    </div>
+
+                    <h2>
+                        Advertisement Videos
+                    </h2>
+
+                    <p>
+                        Promotional edits that communicate your message
+                        clearly while keeping the visuals engaging.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>
+                            Product promotions
+                        </li>
+
+                        <li>
+                            Social media advertisements
+                        </li>
+
+                        <li>
+                            Promotional content
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 04 -->
+
+                <div class="service-card">
+
+                    <span class="service-number">
+                        04
+                    </span>
+
+                    <div class="service-icon">
+                        🤖
+                    </div>
+
+                    <h2>
+                        AI-Scripted Videos
+                    </h2>
+
+                    <p>
+                        Creative video concepts using AI-assisted ideas,
+                        scripting and modern content workflows.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>
+                            AI-assisted scripts
+                        </li>
+
+                        <li>
+                            Creative concepts
+                        </li>
+
+                        <li>
+                            Visual storytelling
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 05 -->
+
+                <div class="service-card">
+
+                    <span class="service-number">
+                        05
+                    </span>
+
+                    <div class="service-icon">
+                        ✨
+                    </div>
+
+                    <h2>
+                        Social Media Content
+                    </h2>
+
+                    <p>
+                        Creative content designed for modern social
+                        platforms and audience engagement.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>
+                            Content formatting
+                        </li>
+
+                        <li>
+                            Engaging visual style
+                        </li>
+
+                        <li>
+                            Platform-ready videos
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- SERVICE 06 -->
+
+                <div class="service-card">
+
+                    <span class="service-number">
+                        06
+                    </span>
+
+                    <div class="service-icon">
+                        🎨
+                    </div>
+
+                    <h2>
+                        Creative Visuals
+                    </h2>
+
+                    <p>
+                        Visual improvements that make your videos
+                        look more polished, modern and professional.
+                    </p>
+
+                    <ul class="service-list">
+
+                        <li>
+                            Typography & captions
+                        </li>
+
+                        <li>
+                            Visual effects
+                        </li>
+
+                        <li>
+                            Creative presentation
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- CTA -->
+
+            <div class="feature-strip">
+
+                <div class="feature-text">
+
+                    <h2>
+                        Have a video idea?
+                    </h2>
+
+                    <p>
+                        Let's turn your idea into an engaging visual story.
+                    </p>
+
+                </div>
+
+                <a href="contact.html" class="feature-btn">
+                    Start a Project →
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+<div class="next-page-indicator" id="nextIndicator">
+    <span>Scroll to continue</span>
+    <div class="scroll-arrow">↓</div>
+</div>
+
+<script>
+
+    const nextPage = "samples.html";
+
+    let navigating = false;
+
+    /* Page entrance */
+
+    window.addEventListener("load", function () {
+
+        requestAnimationFrame(function () {
+
+            document.body.classList.add("page-ready");
+
+        });
+
+    });
+
+
+    /* Detect bottom */
+
+    window.addEventListener("scroll", function () {
+
+        const bottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 5;
+
+        const indicator =
+            document.getElementById("nextIndicator");
+
+        if (bottom) {
+
+            indicator.classList.add("show");
+
+        } else {
+
+            indicator.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* Go to next page */
+
+    function nextPageOpen() {
+
+        if (navigating) return;
+
+        navigating = true;
+
+        document.body.classList.add("page-leaving");
+
+        setTimeout(function () {
+
+            window.location.replace(nextPage);
+
+        }, 280);
+
+    }
+
+
+    /* Mouse wheel */
+
+    window.addEventListener(
+        "wheel",
+        function (event) {
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                event.deltaY > 0
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+    /* Mobile swipe */
+
+    let touchStart = 0;
+
+    window.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStart =
+                event.touches[0].clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    window.addEventListener(
+        "touchend",
+        function (event) {
+
+            const touchEnd =
+                event.changedTouches[0].clientY;
+
+            const swipeUp =
+                touchStart - touchEnd > 60;
+
+            const bottom =
+                window.innerHeight +
+                window.scrollY >=
+                document.documentElement.scrollHeight - 5;
+
+            if (
+                bottom &&
+                swipeUp
+            ) {
+
+                nextPageOpen();
+
+            }
+
+        },
+        { passive: true }
+    );
+
+</script>
+<script>
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.querySelector(".nav-links");
+
+
+menuBtn.addEventListener("click", function () {
+
+    navLinks.classList.toggle("mobile-open");
+
+});
+
+
+/* Close menu after selecting a page */
+
+document.querySelectorAll(".nav-links a")
+    .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("mobile-open");
+
+        });
+
+    });
+
+</script>
 </body>
 </html>
 
